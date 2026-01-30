@@ -1,0 +1,105 @@
+:root {
+    --bg-color: #2a2a2a;
+    --text-color: #999999;
+    --panel-bg: rgba(50, 50, 50, 0.9);
+    --panel-border: #555;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /* Prevent scrolling */
+    background-color: var(--bg-color);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#ascii-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#controls-panel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 250px;
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: sans-serif;
+    font-size: 14px;
+    transition: opacity 0.3s ease;
+}
+
+#controls-panel.hidden {
+    opacity: 0.1;
+    height: 20px;
+    overflow: hidden;
+}
+
+#controls-panel.hidden:hover {
+    opacity: 1;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.header h1 {
+    font-size: 16px;
+    margin: 0;
+}
+
+button {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.control-group {
+    margin-bottom: 15px;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.control-group input[type="range"] {
+    width: 100%;
+}
+
+.control-group .value {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    color: #666;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #111111;
+        --text-color: #eeeeee;
+        --panel-bg: rgba(30, 30, 30, 0.9);
+        --panel-border: #444;
+    }
+
+    .control-group .value {
+        color: #aaa;
+    }
+}

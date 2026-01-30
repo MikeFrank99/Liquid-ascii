@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Liquid ASCII</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="A fluid ascii art simulation running in the browser using HTML5 Canvas.">
+</head>
+
+<body>
+    <canvas id="ascii-canvas"></canvas>
+
+    <div id="controls-panel">
+        <div class="header">
+            <h1>Liquid ASCII</h1>
+            <button id="toggle-controls">Hide</button>
+        </div>
+
+        <div class="control-group">
+            <label for="particle-count">Fluid Amount</label>
+            <input type="range" id="particle-count" min="100" max="5000" step="50" value="300">
+            <span class="value" id="val-particle-count">300</span>
+        </div>
+
+        <div class="control-group">
+            <label for="gravity">Gravity</label>
+            <input type="range" id="gravity" min="0" max="2" step="0.01" value="0.05">
+            <span class="value" id="val-gravity">0.05</span>
+        </div>
+
+        <div class="control-group">
+            <label for="repulsion">Repulsion</label>
+            <input type="range" id="repulsion" min="0" max="5" step="0.1" value="0.8">
+            <span class="value" id="val-repulsion">0.8</span>
+        </div>
+
+        <div class="control-group">
+            <label for="viscosity">Flow (Viscosity)</label>
+            <input type="range" id="viscosity" min="0.8" max="0.99" step="0.01" value="0.99">
+            <span class="value" id="val-viscosity">0.99</span>
+        </div>
+
+        <div class="control-group">
+            <label for="font-size">Font Size</label>
+            <input type="range" id="font-size" min="10" max="40" step="1" value="20">
+            <span class="value" id="val-font-size">20</span>
+        </div>
+
+        <div class="control-group">
+            <label for="color-bg">Background</label>
+            <input type="color" id="color-bg" value="#2a2a2a">
+        </div>
+
+        <div class="control-group">
+            <label for="color-text">Text Color</label>
+            <input type="color" id="color-text" value="#999999">
+        </div>
+
+        <div class="control-group">
+            <label for="chars">Characters (Low -> High)</label>
+            <input type="text" id="chars" value=".+xXoO" style="width: 100%;">
+        </div>
+    </div>
+
+    <script src="liquid-ascii.js"></script>
+</body>
+
+</html>
